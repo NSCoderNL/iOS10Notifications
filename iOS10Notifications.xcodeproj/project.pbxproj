@@ -258,8 +258,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = iOS10Notifications/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.cocoaheadsnl.notifications;
+				PRODUCT_BUNDLE_IDENTIFIER = com.cocoaheads.notifications;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "c07eb11e-3fad-4084-977c-46df1cadb6c3";
+				PROVISIONING_PROFILE_SPECIFIER = "7WT74954BF/iOS Dev";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -270,7 +272,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = iOS10Notifications/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.cocoaheadsnl.notifications;
+				PRODUCT_BUNDLE_IDENTIFIER = com.cocoaheads.notifications;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
