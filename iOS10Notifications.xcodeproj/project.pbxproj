@@ -12,6 +12,8 @@
 		855B8B081D23F00600F5FAFC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 855B8B061D23F00600F5FAFC /* Main.storyboard */; };
 		855B8B0A1D23F00600F5FAFC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 855B8B091D23F00600F5FAFC /* Assets.xcassets */; };
 		855B8B0D1D23F00600F5FAFC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 855B8B0B1D23F00600F5FAFC /* LaunchScreen.storyboard */; };
+		9918BA501D23F4A900782798 /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9918BA4F1D23F4A900782798 /* UserNotifications.framework */; };
+		9918BA521D23F4B000782798 /* UserNotificationsUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9918BA511D23F4B000782798 /* UserNotificationsUI.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,9 @@
 		855B8B091D23F00600F5FAFC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		855B8B0C1D23F00600F5FAFC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		855B8B0E1D23F00600F5FAFC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9918BA4D1D23F48900782798 /* iOS10Notifications.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = iOS10Notifications.entitlements; sourceTree = "<group>"; };
+		9918BA4F1D23F4A900782798 /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
+		9918BA511D23F4B000782798 /* UserNotificationsUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotificationsUI.framework; path = System/Library/Frameworks/UserNotificationsUI.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +34,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9918BA521D23F4B000782798 /* UserNotificationsUI.framework in Frameworks */,
+				9918BA501D23F4A900782798 /* UserNotifications.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +47,7 @@
 			children = (
 				855B8B011D23F00600F5FAFC /* iOS10Notifications */,
 				855B8B001D23F00600F5FAFC /* Products */,
+				9918BA4E1D23F4A900782798 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,6 +62,7 @@
 		855B8B011D23F00600F5FAFC /* iOS10Notifications */ = {
 			isa = PBXGroup;
 			children = (
+				9918BA4D1D23F48900782798 /* iOS10Notifications.entitlements */,
 				855B8B021D23F00600F5FAFC /* AppDelegate.swift */,
 				855B8B041D23F00600F5FAFC /* ViewController.swift */,
 				855B8B061D23F00600F5FAFC /* Main.storyboard */,
@@ -62,6 +71,15 @@
 				855B8B0E1D23F00600F5FAFC /* Info.plist */,
 			);
 			path = iOS10Notifications;
+			sourceTree = "<group>";
+		};
+		9918BA4E1D23F4A900782798 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9918BA511D23F4B000782798 /* UserNotificationsUI.framework */,
+				9918BA4F1D23F4A900782798 /* UserNotifications.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -96,9 +114,14 @@
 				TargetAttributes = {
 					855B8AFE1D23F00600F5FAFC = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = 43XZQA6MPK;
-						DevelopmentTeamName = "Dmytro Andreikiv (Personal Team)";
+						DevelopmentTeam = AF3826P4Z5;
+						DevelopmentTeamName = "Yurii Zadoianchuk (Personal Team)";
 						ProvisioningStyle = Manual;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -256,12 +279,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = iOS10Notifications/iOS10Notifications.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Eugene Braginets (7959TN2JKL)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = iOS10Notifications/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.cocoaheads.notifications;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "c07eb11e-3fad-4084-977c-46df1cadb6c3";
-				PROVISIONING_PROFILE_SPECIFIER = "7WT74954BF/iOS Dev";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -270,10 +296,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = iOS10Notifications/iOS10Notifications.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Eugene Braginets (7959TN2JKL)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_OPTIMIZATION_LEVEL = 0;
 				INFOPLIST_FILE = iOS10Notifications/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.cocoaheads.notifications;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
@@ -297,6 +328,7 @@
 				855B8B131D23F00600F5FAFC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
